@@ -6,8 +6,8 @@ from utils import evaluateANLS, evaluate_exact_match_accuracy
 
 
 model_name ="laytextllm" 
-identifier="vqa"
-dataset="docvqa"
+identifier="zero"
+dataset="funsd_layoutllm"
 pred_result_path = f"./results/{dataset}_{identifier}.json"
 
 

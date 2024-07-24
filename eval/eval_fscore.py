@@ -7,7 +7,7 @@ from utils import evaluateANLS, evaluate_exact_match_accuracy, evalFscore
 
 model_name ="laytextllm" 
 identifier="vqa"
-dataset="sroie"
+dataset="funsd"
 pred_result_path = f"./results/{dataset}_{identifier}.json"
 
 
