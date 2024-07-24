@@ -25,7 +25,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model_path",
         type=str,
-        default="/mnt/bn/lujinghui-nas-yg/models/laytextllm_zero",
+        default="LayTextLLM/LayTextLLM-Zero",
         help="model path",
     )
     parser.add_argument(
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--test_data",
-        default="/mnt/bn/lujinghui-nas-yg/laytextllm_official/datasets/funsd_layoutllm_test.json",
+        default="./datasets/funsd_layoutllm_test.json",
         type=str,
         help="test data path",
     )
