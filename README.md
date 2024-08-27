@@ -176,5 +176,46 @@ Run the corresponding bash file for inference on the target dataset.
 bash /run/run_*.sh
 ```
 
+## Constructing Your Own Test Set
+
+To create your own test set, follow these steps:
+
+1. Use an OCR tool to scan your document or chart. The extracted OCR text should be placed under the `"ocr"` key, while the corresponding OCR coordinates should be stored under the `"poly"` key. The image size should be stored in the `"img_size"` key as shown below:
+
+    ```json
+    {
+      "ocr": [
+        "Text 1",
+        "Text 2",
+        "Text 3"
+      ],
+      "poly": [
+        [x1, y1, x2, y2, x3, y3, x4, y4],
+        [x1, y1, x2, y2, x3, y3, x4, y4],
+        [x1, y1, x2, y2, x3, y3, x4, y4]
+      ],
+      "img_size": {
+        "h": height_of_img,
+        "w": width_of_img
+      }
+    }
+    ```
+
+2. Refer to the JSON format under the `dataset` directory. Your custom dataset should be structured similarly.
+
+3. Rename the JSON file according to the following format: `{dataset_name}_test.json`.
+
+4. Run the inference script as shown below, modifying the parameters to match your setup:
+
+    ```bash
+    python3 infer/laytextllm_inference.py \
+    --dataset your_dataset_name \
+    --model_path LayTextLLM/LayTextLLM-VQA \
+    --cuda_num 4 \
+    --test_data datasets/your_dataset_name_test.json \
+    --identifier vqa
+    ```
+
+
 ## Dataset
 More dataset files can be accessed at [Google Drive](https://drive.google.com/drive/folders/16_18iiO7BTIXiD-OhshL-Dza-ukR-9hW?usp=sharing)
