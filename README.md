@@ -161,7 +161,14 @@ LayTextLLM projects each bounding box to a single embedding and interleaves it w
       </tr>
     </tfoot>
   </table>
+  
+## Installation and Dependencies
 
+Before running the inference scripts, ensure you have the following Python packages installed:
+
+- **torch**: `2.1.0`
+- **transformers**: `4.36.0`
+  
 ## Usage
 
 Run the corresponding bash file for inference on the target dataset.
