@@ -10,6 +10,7 @@
 ## 🔥 News
 
 - **`2024.11.12`** 🌟 We're excited to release the multi-GPU compatible training and inference code for HuggingFace and Deepspeed. Explore the [Training section](#training) for more details!
+- **`2024.11.11`** 🌟 Our [Visualization](#visualization) reveals new insights into how LayTextLLM interprets and processes layouts for enhanced document understanding.
 
 ## Introduction
 LayTextLLM projects each bounding box to a single embedding and interleaves it with text, efficiently avoiding long sequence issues while leveraging autoregressive traits of LLMs. LayTextLLM not only streamlines the interaction of layout and textual data but also shows enhanced performance in Key Information Extraction (KIE) and Visual Question Answering (VQA).
@@ -267,3 +268,26 @@ To create your own test set, follow these steps:
 
 ## Dataset
 More dataset files can be accessed at [Google Drive](https://drive.google.com/drive/folders/16_18iiO7BTIXiD-OhshL-Dza-ukR-9hW?usp=sharing)
+
+## Visualization
+
+### Attention shift
+In Fig. (a) and (b), we observe the model’s attention shift as it predicts "Final". Initially, it focuses on the layout via the bounding box embedding ("\<unk\>"), orienting itself spatially around tokens like "Qty". By the final layer, attention narrows to "Qty", emphasizing its semantic relevance. This progression from layout awareness to content-based focus highlights how spatial cues guide the model to key information, enhancing its ability to understand and answer questions accurately. Fig. (c) further visualizes attention scores, showing "Qty" as the primary focus, followed by "TICKET" and "2.00".
+
+
+<p align="center" width="100%">
+<a target="_blank"><img src="visualize/attention_vis.png" alt="Attention_vis" style="width: 80%; min-width: 200px; display: block; margin: auto;"></a>
+</p>
+
+### Decoding bounding box token back to coordinates
+
+The model can convert bounding box tokens back to coordinates when prompted with the trigger phrase **"let's think step by step"**. 
+
+See the figures below for an illustration, and check the `visualize` directory for more details.
+
+
+<p align="center">
+  <img src="visualize/coordination1.png" alt="Chain of thought response including coordinates" width="45%" />
+  <img src="visualize/coordination2.png" alt="Generated box visualization" width="45%" />
+</p>
+
