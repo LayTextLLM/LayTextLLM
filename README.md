@@ -281,3 +281,13 @@ In Fig. (a) and (b), we observe the model’s attention shift as it predicts "Fi
 
 ### Decoding bounding box token back to coordinates
 
+The model can convert bounding box tokens back to coordinates when prompted with the trigger phrase **"let's think step by step"**. 
+
+See the figures below for an illustration, and check the `visualize` directory for more details.
+
+
+<p align="center">
+  <img src="visualize/coordination1.png" alt="Attention map of the first layer" width="45%" />
+  <img src="visualize/coordination2.png" alt="Attention map of the last layer" width="45%" />
+</p>
+
