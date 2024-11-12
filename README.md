@@ -271,6 +271,9 @@ More dataset files can be accessed at [Google Drive](https://drive.google.com/dr
 
 ## Visualization
 
+As shown below, when the model starts predicting the answer *"Final"*, the newline symbol *`<0x0A>`* focuses heavily on layout information, evident in its attention to the bounding box embedding *`<unk>`* before *"(Qty"*. This indicates the model's initial spatial orientation. Fig.~\ref{fig:attention_map3} visualizes attention scores, showing that *`<0x0A>`* primarily attends to *"Qty"*, followed by *"-TICKET"* and *"2.00"*, crucial layout cues for prediction. In the final layer (Fig.~\ref{fig:attention_last_layer}), attention shifts towards *"Qty"*, indicating a transition from spatial awareness to content understanding, as the model identifies *"Qty"* as the key semantic token for the answer.
+
+
 <p align="center" width="100%">
 <a target="_blank"><img src="visualize/attention_vis.png" alt="Attention_vis" style="width: 80%; min-width: 200px; display: block; margin: auto;"></a>
 </p>
