@@ -175,8 +175,6 @@ Before running the inference scripts, ensure you have the following Python packa
   
 ## Training
 
-## Usage
-
 To train LayTextLLM with DeepSpeed on 8 GPUs, use the following command or refer to the provided `run_train_ds.sh` script for easy setup:
 
 ```bash
