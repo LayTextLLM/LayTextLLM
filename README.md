@@ -174,14 +174,38 @@ Before running the inference scripts, ensure you have the following Python packa
   
 ## Training
 
-## Multi-GPU Inference
+## Usage
 
-## Single-GPU Inference
+To train LayTextLLM with DeepSpeed on 8 GPUs, use the following command or refer to the provided `run_train_ds.sh` script for easy setup:
 
-Run the corresponding bash file for inference on the target dataset.
-```
+```bash
+deepspeed --num_gpus=8 --master_port=12355 train/laytextllm_train.py \
+--train_data datasets/funsd_train.json \
+--identifier funsd_ds_bs2 \
+--deepspeed_config ds_config/ds_z2_offload_config.json \
+--model_path LayTextLLM/LayTextLLM-Zero \
+--batch_size 2
+
+
+## Inference
+
+### Single-GPU Inference
+
+For single-GPU inference, you can run the corresponding bash file for the target dataset as follows:
+
+```bash
 bash /run/run_*.sh
-```
+
+### Multi-GPU Inference
+
+For multi-GPU inference with DeepSpeed, you can either use the run_infer_ds.sh script or run the following command directly:
+
+deepspeed --num_gpus=8 --master_port=12355 infer/laytextllm_inference_ds.py \
+--test_data datasets/funsd_test.json \
+--dataset funsd \
+--identifier funsd_ds_bs2 \
+--deepspeed_config ds_config/ds_z2_offload_config.json \
+--model_path trained_models/funsd_ds_bs2/checkpoint-298
 
 ## Constructing Your Own Test Set
 
