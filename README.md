@@ -10,6 +10,7 @@
 ## 🔥 News
 
 - **`2024.11.12`** 🌟 We're excited to release the multi-GPU compatible training and inference code for HuggingFace and Deepspeed. Explore the [Training section](#training) for more details!
+- **`2024.11.11`** 🌟 Our [Visualization](#visualization) reveals new insights into how LayTextLLM interprets and processes layouts for enhanced document understanding.
 
 ## Introduction
 LayTextLLM projects each bounding box to a single embedding and interleaves it with text, efficiently avoiding long sequence issues while leveraging autoregressive traits of LLMs. LayTextLLM not only streamlines the interaction of layout and textual data but also shows enhanced performance in Key Information Extraction (KIE) and Visual Question Answering (VQA).
@@ -267,3 +268,10 @@ To create your own test set, follow these steps:
 
 ## Dataset
 More dataset files can be accessed at [Google Drive](https://drive.google.com/drive/folders/16_18iiO7BTIXiD-OhshL-Dza-ukR-9hW?usp=sharing)
+
+## Visualization
+
+<p align="center" width="100%">
+<a target="_blank"><img src="visualize/attention_vis.png" alt="Attention_vis" style="width: 80%; min-width: 200px; display: block; margin: auto;"></a>
+</p>
+
