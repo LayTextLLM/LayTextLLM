@@ -170,7 +170,8 @@ LayTextLLM projects each bounding box to a single embedding and interleaves it w
 Before running the inference scripts, ensure you have the following Python packages installed:
 
 - **torch**: `2.1.0`
-- **transformers**: `4.36.0`
+- **transformers**: `4.40.0`
+- **deepspeed**: `0.15.4`
   
 ## Training
 
@@ -185,7 +186,7 @@ deepspeed --num_gpus=8 --master_port=12355 train/laytextllm_train.py \
 --deepspeed_config ds_config/ds_z2_offload_config.json \
 --model_path LayTextLLM/LayTextLLM-Zero \
 --batch_size 2
-
+```
 
 ## Inference
 
@@ -195,17 +196,20 @@ For single-GPU inference, you can run the corresponding bash file for the target
 
 ```bash
 bash /run/run_*.sh
+```
 
 ### Multi-GPU Inference
 
 For multi-GPU inference with DeepSpeed, you can either use the run_infer_ds.sh script or run the following command directly:
 
+```bash
 deepspeed --num_gpus=8 --master_port=12355 infer/laytextllm_inference_ds.py \
 --test_data datasets/funsd_test.json \
 --dataset funsd \
 --identifier funsd_ds_bs2 \
 --deepspeed_config ds_config/ds_z2_offload_config.json \
 --model_path trained_models/funsd_ds_bs2/checkpoint-298
+```
 
 ## Constructing Your Own Test Set
 
