@@ -185,15 +185,13 @@ deepspeed --num_gpus=8 --master_port=12355 train/laytextllm_train.py \
 --batch_size 2
 ```
 
-## Important Note for Multi-GPU Training and Inference
-
 **Recommendation:** Download the model to your local directory before starting multi-GPU training or inference. This avoids each GPU rank downloading the model separately, saving time and bandwidth.
 
 To download the model manually, run:
 
 ```bash
-transformers-cli download LayTextLLM/LayTextLLM-Zero -o /path/to/your/model/directory
-
+git lfs clone https://huggingface.co/LayTextLLM/LayTextLLM-Zero
+```
 
 ## Implementation Differences
 
