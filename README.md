@@ -287,7 +287,7 @@ See the figures below for an illustration, and check the `visualize` directory f
 
 
 <p align="center">
-  <img src="visualize/coordination1.png" alt="Attention map of the first layer" width="45%" />
-  <img src="visualize/coordination2.png" alt="Attention map of the last layer" width="45%" />
+  <img src="visualize/coordination1.png" alt="Chain of thought response including coordinates" width="45%" />
+  <img src="visualize/coordination2.png" alt="Generated box visualization" width="45%" />
 </p>
 
