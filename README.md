@@ -185,6 +185,14 @@ deepspeed --num_gpus=8 --master_port=12355 train/laytextllm_train.py \
 --batch_size 2
 ```
 
+## Implementation Differences
+
+| Model Version          | FUNSD | DocVQA |
+|------------------------|-------|--------|
+| Paper (0 shuffle)      | 65.1  | 73.00  |
+| Hugging Face (0 shuffle) | 64.81 | 74.19  |
+
+
 ## Inference
 
 ### Single-GPU Inference
