@@ -7,7 +7,10 @@
 <a href='https://arxiv.org/abs/2407.01976'><img src='https://img.shields.io/badge/Paper-PDF-red'></a>
 </div>
 
+## 🔥 News
 
+- **`2024.11.12`** 🌟 We're excited to release the multi-GPU compatible training and inference code for HuggingFace and Deepspeed. Explore the [Training section](#training) for more details!
+- **`2024.09.09`** 🌟 Our [Attention visualization](#visualization) reveals new insights into how LayTextLLM interprets and processes layouts for enhanced document understanding.
 
 ## Introduction
 LayTextLLM projects each bounding box to a single embedding and interleaves it with text, efficiently avoiding long sequence issues while leveraging autoregressive traits of LLMs. LayTextLLM not only streamlines the interaction of layout and textual data but also shows enhanced performance in Key Information Extraction (KIE) and Visual Question Answering (VQA).
@@ -169,7 +172,11 @@ Before running the inference scripts, ensure you have the following Python packa
 - **torch**: `2.1.0`
 - **transformers**: `4.36.0`
   
-## Usage
+## Training
+
+## Multi-GPU Inference
+
+## Single-GPU Inference
 
 Run the corresponding bash file for inference on the target dataset.
 ```
