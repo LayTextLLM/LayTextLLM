@@ -271,10 +271,13 @@ More dataset files can be accessed at [Google Drive](https://drive.google.com/dr
 
 ## Visualization
 
+### Attention shift
 In Fig. (a) and (b), we observe the model’s attention shift as it predicts "Final". Initially, it focuses on the layout via the bounding box embedding ("\<unk\>"), orienting itself spatially around tokens like "Qty". By the final layer, attention narrows to "Qty", emphasizing its semantic relevance. This progression from layout awareness to content-based focus highlights how spatial cues guide the model to key information, enhancing its ability to understand and answer questions accurately. Fig. (c) further visualizes attention scores, showing "Qty" as the primary focus, followed by "TICKET" and "2.00".
 
 
 <p align="center" width="100%">
 <a target="_blank"><img src="visualize/attention_vis.png" alt="Attention_vis" style="width: 80%; min-width: 200px; display: block; margin: auto;"></a>
 </p>
+
+### Decoding bounding box token back to coordinates
 
