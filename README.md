@@ -228,7 +228,7 @@ deepspeed --num_gpus=8 --master_port=12355 infer/laytextllm_inference_ds.py \
 
 More dataset files used in paper can be accessed at [Google Drive](https://drive.google.com/drive/folders/16_18iiO7BTIXiD-OhshL-Dza-ukR-9hW?usp=sharing)
 
-### Constructing Your Own Dataset Set
+### Constructing Your Own Dataset
 
 #### Preparing Training and Test Data
 
