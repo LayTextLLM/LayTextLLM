@@ -227,7 +227,7 @@ deepspeed --num_gpus=8 --master_port=12355 infer/laytextllm_inference_ds.py \
 
 ## Constructing Your Own Dataset Set
 
-# Preparing Training and Test Data for OCR-Based Field Extraction
+# Preparing Training and Test Data
 
 To prepare your training and test datasets, follow these steps to structure each data entry. This format includes OCR-extracted text, bounding polygon coordinates, image dimensions, specific field questions, and their expected answers.
 
