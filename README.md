@@ -9,7 +9,7 @@
 
 ## 🔥 News
 
-- **`2024.11.12`** 🌟 We're excited to release the multi-GPU compatible training and inference code for HuggingFace and Deepspeed. Explore the [Training section](#training) for more details!
+- **`2024.11.12`** 🌟 We're excited to release the multi-GPU compatible training and inference code for HuggingFace and Deepspeed. Explore the [Training section](#training) and [Dataset section](#dataset) for more details!
 - **`2024.11.11`** 🌟 Our [Visualization](#visualization) reveals new insights into how LayTextLLM interprets and processes layouts for enhanced document understanding.
 
 ## Introduction
@@ -224,14 +224,17 @@ deepspeed --num_gpus=8 --master_port=12355 infer/laytextllm_inference_ds.py \
 --deepspeed_config ds_config/ds_z2_offload_config.json \
 --model_path trained_models/funsd_ds_bs2/checkpoint-298
 ```
+## Dataset
 
-## Constructing Your Own Dataset Set
+More dataset files used in paper can be accessed at [Google Drive](https://drive.google.com/drive/folders/16_18iiO7BTIXiD-OhshL-Dza-ukR-9hW?usp=sharing)
 
-### Preparing Training and Test Data
+### Constructing Your Own Dataset Set
+
+#### Preparing Training and Test Data
 
 To prepare your training and test datasets, follow these steps to structure each data entry. This format includes OCR-extracted text, bounding polygon coordinates, image dimensions, specific field questions, and their expected answers.
 
-### Data Structure
+#### Data Structure
 
 Each data entry should follow this JSON structure:
 
@@ -258,10 +261,6 @@ Each data entry should follow this JSON structure:
 
 You can also Refer to the JSON format under the `dataset` directory. Your custom dataset should be structured similarly.
 
-
-
-## Dataset
-More dataset files can be accessed at [Google Drive](https://drive.google.com/drive/folders/16_18iiO7BTIXiD-OhshL-Dza-ukR-9hW?usp=sharing)
 
 ## Visualization
 
