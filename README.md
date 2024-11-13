@@ -256,7 +256,7 @@ Each data entry should follow this JSON structure:
 }
 ```
 
-2. Refer to the JSON format under the `dataset` directory. Your custom dataset should be structured similarly.
+You can also Refer to the JSON format under the `dataset` directory. Your custom dataset should be structured similarly.
 
 
 
