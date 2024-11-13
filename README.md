@@ -225,45 +225,39 @@ deepspeed --num_gpus=8 --master_port=12355 infer/laytextllm_inference_ds.py \
 --model_path trained_models/funsd_ds_bs2/checkpoint-298
 ```
 
-## Constructing Your Own Test Set
+## Constructing Your Own Dataset Set
 
-To create your own test set, follow these steps:
+# Preparing Training and Test Data for OCR-Based Field Extraction
 
-1. Use an OCR tool to scan your document or chart. The extracted OCR text should be placed under the `"ocr"` key, while the corresponding OCR coordinates should be stored under the `"poly"` key. The image size should be stored in the `"img_size"` key as shown below:
+To prepare your training and test datasets, follow these steps to structure each data entry. This format includes OCR-extracted text, bounding polygon coordinates, image dimensions, specific field questions, and their expected answers.
 
-    ```json
-    {
-      "ocr": [
-        "Text 1",
-        "Text 2",
-        "Text 3"
-      ],
-      "poly": [
-        [x1, y1, x2, y2, x3, y3, x4, y4],
-        [x1, y1, x2, y2, x3, y3, x4, y4],
-        [x1, y1, x2, y2, x3, y3, x4, y4]
-      ],
-      "img_size": {
-        "h": height_of_img,
-        "w": width_of_img
-      }
-    }
-    ```
+## Data Structure
+
+Each data entry should follow this JSON structure:
+
+```json
+{
+  "ocr": [
+    "Text 1",
+    "Text 2",
+    "Text 3"
+  ],
+  "poly": [
+    [x1, y1, x2, y2, x3, y3, x4, y4],
+    [x1, y1, x2, y2, x3, y3, x4, y4],
+    [x1, y1, x2, y2, x3, y3, x4, y4]
+  ],
+  "img_size": {
+    "h": height_of_img,
+    "w": width_of_img
+  },
+  "question": "What is the content in the \"Field Name\" field?",
+  "answer": "Expected Field Content"
+}
+```
 
 2. Refer to the JSON format under the `dataset` directory. Your custom dataset should be structured similarly.
 
-3. Rename the JSON file according to the following format: `{dataset_name}_test.json`.
-
-4. Run the inference script as shown below, modifying the parameters to match your setup:
-
-    ```bash
-    python3 infer/laytextllm_inference.py \
-    --dataset your_dataset_name \
-    --model_path LayTextLLM/LayTextLLM-VQA \
-    --cuda_num 4 \
-    --test_data datasets/your_dataset_name_test.json \
-    --identifier vqa
-    ```
 
 
 ## Dataset
