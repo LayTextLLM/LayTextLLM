@@ -274,7 +274,7 @@ In Fig. (a) and (b), we observe the model’s attention shift as it predicts "Fi
 
 ### Decoding bounding box token back to coordinates
 
-While LayTextLLM isn't explicitly designed to generate bounding boxes, it can do so. Triggered by the prompt "Please think step-by-step," as seen in Tab.~\ref{tab:funsd_bbx}, the model accurately outputs the bounding box for the query "What is the content in the 'NUMBER OF PAGES INCLUDING COVER SHEET:' field?". Remarkably, the model only uses bounding box tokens as input, without visual information, and manages to produce a block-level bounding box even with disordered, word-level OCR input like "...\<unk\> NUMBER\<unk\> OF\<unk\> INCLUDING\<unk\> COVER\<unk\> SHEET:\<unk\> PAGES\<unk\> 3\<unk\> SENDER\<unk\>...".
+While LayTextLLM isn't explicitly designed to generate bounding boxes, it can do so. Triggered by the prompt "Please think step-by-step," as seen in below, the model accurately outputs the bounding box for the query "What is the content in the 'NUMBER OF PAGES INCLUDING COVER SHEET:' field?". Remarkably, the model only uses bounding box tokens as input, without visual information, and manages to produce a block-level bounding box even with disordered, word-level OCR input like "...\<unk\> NUMBER\<unk\> OF\<unk\> INCLUDING\<unk\> COVER\<unk\> SHEET:\<unk\> PAGES\<unk\> 3\<unk\> SENDER\<unk\>...".
 
 
 <p align="center">
