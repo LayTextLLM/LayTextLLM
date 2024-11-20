@@ -282,3 +282,15 @@ While LayTextLLM isn't explicitly designed to generate bounding boxes, it can do
   <img src="visualize/coordination2.png" alt="Generated box visualization" width="45%" />
 </p>
 
+## Citation
+
+If you find LayTextLLM useful for your research and applications, please cite using this BibTeX:
+
+```bibtex
+@article{lu2024bounding,
+  title={A Bounding Box is Worth One Token: Interleaving Layout and Text in a Large Language Model for Document Understanding},
+  author={Lu, Jinghui and Yu, Haiyang and Wang, Yanjie and Ye, Yongjie and Tang, Jingqun and Yang, Ziwei and Wu, Binghong and Liu, Qi and Feng, Hao and Wang, Han and others},
+  journal={arXiv preprint arXiv:2407.01976},
+  year={2024}
+}
+```
