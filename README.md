@@ -230,6 +230,8 @@ More dataset files used in paper can be accessed at [Google Drive](https://drive
 
 ### Constructing Your Own Dataset
 
+**Quick Start**: See `datasets/laytextllm_construct_example.py`, or see the following instruction.
+
 #### Preparing Training and Test Data
 
 To prepare your training and test datasets, follow these steps to structure each data entry. This format includes OCR-extracted text, bounding polygon coordinates, image dimensions, specific field questions, and their expected answers.
